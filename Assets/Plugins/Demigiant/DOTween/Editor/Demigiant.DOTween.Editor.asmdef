@@ -1,0 +1,18 @@
+{
+    "name": "Demigiant.DOTween.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7d0f0c7a1682fc7448a98c55d7b46001"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
