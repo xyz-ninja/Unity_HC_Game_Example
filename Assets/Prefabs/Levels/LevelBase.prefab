@@ -631,6 +631,10 @@ MonoBehaviour:
   _cellsDensityX: 10
   _cellsDensityZ: 15
   _cellSize: {x: 1, y: 1, z: 1}
+  _hasExcludeLayers: 1
+  _excludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &5128853460029138165
 PrefabInstance:
   m_ObjectHideFlags: 0

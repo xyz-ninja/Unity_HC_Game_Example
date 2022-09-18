@@ -7,10 +7,17 @@ namespace HCExample.Generators.PlaneGrid {
 		private Vector2 _gridPosition;
 		private Vector3 _worldPosition;
 
-		#region getters
+		private bool _isLocked = false;
+		
+		#region getters/setters
 
 		public Vector2 GridPosition => _gridPosition;
 		public Vector3 WorldPosition => _worldPosition;
+
+		public bool IsLocked {
+			get => _isLocked;
+			set => _isLocked = value;
+		}
 
 		#endregion
 		

@@ -13,11 +13,15 @@ namespace HCExample.Generators.PlaneGrid {
 		[SerializeField] private int _cellsDensityX = 10;
 		[SerializeField] private int _cellsDensityZ = 10;
 		[SerializeField] private Vector3 _cellSize = Vector3.one;
+		[SerializeField] private bool _hasExcludeLayers = false;
+		[ShowIf("_hasExcludeLayers"), SerializeField] private LayerMask _excludeLayers;
 		
 		private float _densityMultiplier = 1f;
 		
 		private List<Cell> _cells = new List<Cell>();
-
+		private List<Cell> _lockedCells = new List<Cell>();
+		private List<Cell> _notLockedCells = new List<Cell>();
+		
 		[Button()]
 		public void GenerateGrid() {
 			_cells.Clear();
@@ -30,31 +34,49 @@ namespace HCExample.Generators.PlaneGrid {
 			var densityX = Mathf.RoundToInt(_cellsDensityX * _densityMultiplier);
 			var densityZ = Mathf.RoundToInt(_cellsDensityZ * _densityMultiplier);
 
+			densityX = Mathf.Clamp(densityX, 1, densityX);
+			densityZ = Mathf.Clamp(densityZ, 1, densityZ);
+			
 			float marginX = extentX * 2 / densityX;
 			float marginZ = extentZ * 2 / densityZ;
-			
-			//densityX = Mathf.Clamp(densityX, minDensity, densityX);
-			densityX = Mathf.Clamp(densityX, 1, densityX);
-			//densityZ = Mathf.Clamp(densityZ, minDensity, densityZ);
-			densityZ = Mathf.Clamp(densityZ, 1, densityZ);
 
-			for (int row = 0; row < densityX; row++) {
-				for (int col = 0; col < densityZ; col++) {
+			for (int row = 0; row < densityZ; row++) {
+				for (int col = 0; col < densityX; col++) {
 					
-					var targetPosition = _planeT.TransformPoint(
-						-extentX + marginX * row, 
+					var gridPosition = new Vector2(col, row);
+					var worldPosition = _planeT.TransformPoint(
+						-extentX + marginX * col, 
 						_planeT.position.y,
-						-extentZ + marginZ * col);
+						-extentZ + marginZ * row);
 					
-					var cell = new Cell(new Vector2(row, col) , targetPosition);
+					var cell = new Cell(gridPosition, worldPosition);
 					_cells.Add(cell);
+
+					// check exlude layers
+					if (_hasExcludeLayers) {
+						if (Physics.Raycast(worldPosition, Vector3.up * 3, 3, _excludeLayers)) {
+							cell.IsLocked = true;
+						}
+					}
+
+					if (cell.IsLocked) {
+						_lockedCells.Add(cell);
+					} else {
+						_notLockedCells.Add(cell);
+					}
 				}
 			}
 		}
 
 		private void OnDrawGizmos() {
+			
 			foreach (var cell in _cells) {
-				Gizmos.color = Color.green;
+				if (cell.IsLocked) {
+					Gizmos.color = Color.red;
+				} else {
+					Gizmos.color = Color.green;
+				}
+
 				Gizmos.DrawWireCube(cell.WorldPosition, _cellSize);
 			}
 		}
