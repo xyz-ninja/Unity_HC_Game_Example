@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Entity>k__BackingField: {fileID: 367520231588304746}
   _moveType: 0
-  _moveSpeed: 80
+  _moveSpeed: 150
 --- !u!114 &2680795060059417166
 MonoBehaviour:
   m_ObjectHideFlags: 0
