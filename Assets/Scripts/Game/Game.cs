@@ -4,7 +4,7 @@ public class Game : MonoBehaviour {
     
     public static Game Instance;
 
-    [Header("Main")] 
+    [Header("Main")]
     [SerializeField] private CamerasManager _camerasManager;
     [SerializeField] private World _world;
 
