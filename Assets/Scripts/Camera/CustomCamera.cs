@@ -7,13 +7,13 @@ public class CustomCamera : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     [SerializeField] private CinemachineImpulseSource _cinemachineImpulseSource;
 
+    private CinemachineTransposer _cinemachineTransposer;
+    
     #region getters
 
     public CinemachineVirtualCamera VirtualCamera => _virtualCamera;
 
     #endregion
-
-    private CinemachineTransposer _cinemachineTransposer;
 
     private void Awake() {
         _cinemachineTransposer = _virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
