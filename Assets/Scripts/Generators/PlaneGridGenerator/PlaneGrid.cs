@@ -21,8 +21,15 @@ namespace HCExample.Generators.PlaneGrid {
 		private List<Cell> _cells = new List<Cell>();
 		private List<Cell> _lockedCells = new List<Cell>();
 		private List<Cell> _notLockedCells = new List<Cell>();
+
+		#region getters
+
+		public List<Cell> NotLockedCells => _notLockedCells;
+
+		#endregion
 		
 		[Button()]
+
 		public void GenerateGrid() {
 			_cells.Clear();
 			
@@ -72,12 +79,14 @@ namespace HCExample.Generators.PlaneGrid {
 			
 			foreach (var cell in _cells) {
 				if (cell.IsLocked) {
-					Gizmos.color = Color.red;
+					var color = Color.red;
+					color.a = 0.4f;
+					Gizmos.color = color;
+					Gizmos.DrawCube(cell.WorldPosition, _cellSize);
 				} else {
 					Gizmos.color = Color.green;
+					Gizmos.DrawWireCube(cell.WorldPosition, _cellSize);
 				}
-
-				Gizmos.DrawWireCube(cell.WorldPosition, _cellSize);
 			}
 		}
 	}
