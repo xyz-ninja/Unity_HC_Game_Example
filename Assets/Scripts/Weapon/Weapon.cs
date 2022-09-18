@@ -15,11 +15,30 @@ public class Weapon : MonoBehaviour {
     [Header("Options")]
     [ShowIf("_isFirearmsMode"), SerializeField] private GameObject _projectile;
     [SerializeField] private bool _autoSearchEnemies = true;
+    [ShowIf("_autoSearchEnemies")] private float _searchEnemiesDelay = 0.3f;
     [SerializeField] private LayerMask _enemiesLayer;
 
-    private bool _isMeleeMode = false;
-    private bool _isFirearmsMode = false;
+    public Action OnAttack;
+    
+    private bool _isMeleeMode;
+    private bool _isFirearmsMode;
 
+    private void Update() {
+        if (_autoSearchEnemies) {
+            
+        }
+    }
+
+    public void Attack() {
+        OnAttack.Invoke();
+
+        switch (_weaponData.AttackMode) {
+            case WeaponData.ATTACK_MODE.FIREARMS:
+                //var projectile = 
+                break;
+        }
+    }
+    
     private void OnValidate() {
         _isMeleeMode = _weaponData.AttackMode == WeaponData.ATTACK_MODE.MELEE;
         _isFirearmsMode = _weaponData.AttackMode == WeaponData.ATTACK_MODE.FIREARMS;
