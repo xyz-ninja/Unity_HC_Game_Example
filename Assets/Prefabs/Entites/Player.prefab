@@ -249,6 +249,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 367520231588304746}
+--- !u!1 &4191020682506463740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8211132912394642489}
+  m_Layer: 3
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8211132912394642489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4191020682506463740}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.079, y: 0, z: 0.646}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3063981258086860879}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4777570508178821906
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3063981258086860879}
+  - component: {fileID: 6780032168730502848}
   m_Layer: 3
   m_Name: Weapon
   m_TagString: Untagged
@@ -324,9 +356,29 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3133843166671137361}
+  - {fileID: 8211132912394642489}
   m_Father: {fileID: 2530039247401009270}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -6.967, z: 0}
+--- !u!114 &6780032168730502848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599441218893842631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ea11043ca02ff4ab0c70926a4ce22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponData: {fileID: 11400000, guid: 2b27b7d4bac2c9148acbb3382c7154c6, type: 2}
+  _shootPointT: {fileID: 8211132912394642489}
+  _projectile: {fileID: 0}
+  _autoSearchEnemies: 1
+  _enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &6644026460551579231
 GameObject:
   m_ObjectHideFlags: 0

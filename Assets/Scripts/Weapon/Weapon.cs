@@ -40,6 +40,10 @@ public class Weapon : MonoBehaviour {
     }
     
     private void OnValidate() {
+        if (_weaponData == null) {
+            return;
+        }
+        
         _isMeleeMode = _weaponData.AttackMode == WeaponData.ATTACK_MODE.MELEE;
         _isFirearmsMode = _weaponData.AttackMode == WeaponData.ATTACK_MODE.FIREARMS;
     }
