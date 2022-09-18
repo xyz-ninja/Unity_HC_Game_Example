@@ -10,12 +10,30 @@ public class EntityMovement : MonoBehaviour
     [Header("Options")]
     [SerializeField] private MOVE_TYPE _moveType = MOVE_TYPE.VELOCITY;
     [SerializeField] private float _moveSpeed = 80f;
-
+    [SerializeField] private bool _rotateToMoveDirection = true;
+    
     private bool _disableYChange = true;
     
     private Vector3 _targetDirection;
     private bool _isMove;
+
+    #region getters/setters
+
+    public bool RotateToMoveDirection {
+        get => _rotateToMoveDirection;
+        set => _rotateToMoveDirection = value;
+    }
+
+    #endregion
     
+    private void Update() {
+        if (_isMove) {
+            if (_rotateToMoveDirection) {
+                Entity.RootT.RotateToDirection(_targetDirection);
+            }
+        }
+    }
+
     private void FixedUpdate() {
         
         if (_isMove == false) {
@@ -39,11 +57,11 @@ public class EntityMovement : MonoBehaviour
 
     public void MoveInDirection(Vector3 direction) {
         _isMove = true;
-
         _targetDirection = direction;
     }
 
     public void Stop() {
         _isMove = false;
+        _targetDirection = default;
     }
 }

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-	private enum ENEMY_MODE { CHILL, CHASE_PLAYER }
+	private enum ENEMY_ACTION_MODE { IDLE, MOVE_AROUND, CHASE_PLAYER }
 
 }

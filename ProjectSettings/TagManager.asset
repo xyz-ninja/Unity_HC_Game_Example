@@ -10,10 +10,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Allies
   - Water
   - UI
-  - Entities
+  - Enemies
   - Props
   - 
   - 
