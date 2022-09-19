@@ -33,7 +33,7 @@ public class Entity : MonoBehaviour {
         _zoneObserver = GetComponent<EntityZoneObserver>();
     }
 
-    private void OnDisable() {
+    protected virtual void OnDisable() {
         _rootT.DOKill();
         transform.DOKill();
     }

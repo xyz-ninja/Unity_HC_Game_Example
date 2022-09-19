@@ -53,6 +53,11 @@ public class Weapon : MonoBehaviour {
     }
 
     private void Update() {
+
+        if (_attackEnabled == false) {
+            return;
+        }
+        
         if (_autoSearchEnemies) {
             
             _autoAttackTimer.Update(Time.deltaTime);

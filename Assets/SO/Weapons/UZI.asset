@@ -16,5 +16,5 @@ MonoBehaviour:
   _attackMode: 1
   _attackRange: 3.5
   _attackDelay: 0.24
-  _accuracySpread: {x: -2, y: 2}
+  _accuracySpread: {x: -0.7, y: 0.7}
   <OnAttackFX>k__BackingField: {fileID: 0}
