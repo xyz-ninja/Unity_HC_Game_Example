@@ -165,7 +165,6 @@ GameObject:
   - component: {fileID: 3743066115530700944}
   - component: {fileID: 2680795060059417166}
   - component: {fileID: 6100511962082541039}
-  - component: {fileID: 3134309187678007363}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -256,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Entity>k__BackingField: {fileID: 367520231588304746}
   _moveType: 0
-  _moveSpeed: 150
+  _moveSpeed: 175
   _rotateToMoveDirection: 1
 --- !u!114 &3743066115530700944
 MonoBehaviour:
@@ -299,25 +298,6 @@ MonoBehaviour:
   isInvincible: 0
   maxHealth: 3
   currentHealth: 3
---- !u!114 &3134309187678007363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2451532061287990133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f51c68f583f4762418db404b56d84ba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnPointT: {fileID: 8211132912394642489}
-  _dropItemsRange: {x: 3, y: 7}
-  _dropItems:
-  - {fileID: 11400000, guid: 09961e98fa0e17641baad51caa987144, type: 2}
-  - {fileID: 11400000, guid: da5615d1919e3d54e817373f625c4691, type: 2}
-  - {fileID: 11400000, guid: a721cb195e61bd245b32fbf8e373be8b, type: 2}
-  _dropRandomRange: {x: 1, y: 2.2}
 --- !u!1 &3700603554738771402
 GameObject:
   m_ObjectHideFlags: 0

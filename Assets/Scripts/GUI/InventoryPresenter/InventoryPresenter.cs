@@ -21,10 +21,12 @@ public class InventoryPresenter : MonoBehaviour {
 		_playerInventory = level.Player.Inventory;
 
 		_playerInventory.ItemAdded += UpdateView;
+		_playerInventory.ItemStackAdded += UpdateView;
 	}
 
 	private void OnDisable() {
 		_playerInventory.ItemAdded -= UpdateView;
+		_playerInventory.ItemStackAdded -= UpdateView;
 	}
 
 	private void UpdateView() {
@@ -34,7 +36,7 @@ public class InventoryPresenter : MonoBehaviour {
 		//Debug.Log("stacks count" + stacks.Count.ToString());
 		
 		if (stacks.Count != _blocks.Count) {
-			
+
 			foreach (var block in _blocks) {
 				LeanPool.Despawn(block.gameObject);
 			}

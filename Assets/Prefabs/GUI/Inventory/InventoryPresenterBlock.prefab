@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491144111515489393}
   - component: {fileID: 6531670530656110560}
+  - component: {fileID: 2188606269449292523}
   m_Layer: 0
   m_Name: InventoryPresenterBlock
   m_TagString: Untagged
@@ -53,6 +54,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 5686306758574782784}
   _label: {fileID: 3085171285289867453}
+  _punchScaler: {fileID: 2188606269449292523}
+--- !u!114 &2188606269449292523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284715218300153023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a276928ebbb9d4145828a5c6ba68c537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 6631218747187756896}
+  _strength: {x: 0.5, y: 0.5}
+  _animationDuration: 0.2
 --- !u!1 &4404873007941919619
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,8 +105,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 83.7, y: 0}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchoredPosition: {x: 50.000015, y: 0}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7464524019003949981
 CanvasRenderer:
@@ -164,7 +181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 92.8, y: 13.7123}
+  m_AnchoredPosition: {x: 48, y: 23}
   m_SizeDelta: {x: 200, y: 77.4246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1226862973312471043
@@ -222,7 +239,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 97
+  m_fontSize: 74.3
   m_fontSizeBase: 51.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -258,7 +275,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -8.846802, z: 0, w: -22.116455}
+  m_margin: {x: 0, y: 16.532885, z: 0, w: -22.116455}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blocksT: {fileID: 7920240904130374491}
-  _blockYOffset: 100
+  _blockYOffset: 165
 --- !u!1 &8890123198293734792
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,6 @@ public class Inventory : MonoBehaviour
             
         } else {
             
-            Debug.Log(targetStack.Data.ItemName + " count " + targetStack.ItemsCount);
             targetStack.ItemsCount += 1;
         }
         
@@ -49,6 +48,28 @@ public class Inventory : MonoBehaviour
         _itemsStacks.Add(stack);
         
         ItemStackAdded?.Invoke();
+    }
+
+    public void SellItems() {
+        if (_itemsStacks.Count > 0) {
+            StartCoroutine(CoroSellItems());
+        }
+    }
+
+    IEnumerator CoroSellItems() {
+        
+        while (_itemsStacks.Count > 0) {
+            var stack = _itemsStacks[0];
+            Game.Instance.GlobalData.AddCoins(stack.ItemsCount * stack.Data.Price);
+
+            _itemsStacks.Remove(stack);
+            
+            ItemStackAdded?.Invoke();
+            
+            yield return new WaitForSeconds(1);
+        }
+        
+        _itemsStacks.Clear();
     }
 
     [CanBeNull]

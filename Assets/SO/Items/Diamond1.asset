@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Diamond1
   _itemSprite: {fileID: 21300000, guid: 5cf262c6638238643a553ee60cca1051, type: 3}
-  _price: 5
+  _price: 1

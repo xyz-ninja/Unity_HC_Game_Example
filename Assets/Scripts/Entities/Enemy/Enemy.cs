@@ -35,6 +35,9 @@ public class Enemy : Entity
 	private bool _isDead = false;
 	
 	private void OnEnable() {
+		
+		_health.Reset();
+		
 		_health.HPChanged += HPChanged;
 		
 		_isDead = false;

@@ -94,6 +94,8 @@ public class Player : Entity {
 				if (level.EnemiesManager.EnemiesCount == 0) {
 					level.GenerateEnemies();
 				}
+				
+				_inventory.SellItems();
 
 				Debug.Log("Entered Zone : Player Base");
 				
