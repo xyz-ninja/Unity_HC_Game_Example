@@ -15,6 +15,6 @@ MonoBehaviour:
   WeaponName: UZI
   _attackMode: 1
   _attackRange: 3.5
-  _attackDelay: 0.24
-  _accuracySpread: {x: -0.7, y: 0.7}
+  _attackDelay: 0.12
+  _accuracySpread: {x: -1.5, y: 1.5}
   <OnAttackFX>k__BackingField: {fileID: 0}

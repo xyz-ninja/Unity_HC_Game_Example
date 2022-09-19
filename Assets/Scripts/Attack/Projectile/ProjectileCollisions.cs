@@ -25,6 +25,9 @@ public class ProjectileCollisions : MonoBehaviour {
             var entity = otherRigidbody.gameObject.GetComponent<Entity>();
             
             if (entity != null && _targetTags.Contains(entity.gameObject.tag)) {
+                
+                entity.Health.DealDamage(_projectile.Damage);
+                
                 Hit();
             }
             

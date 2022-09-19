@@ -35,7 +35,13 @@ public class Weapon : MonoBehaviour {
 
     public bool AttackEnabled {
         get => _attackEnabled;
-        set => _attackEnabled = value;
+        set {
+            _attackEnabled = value;
+
+            if (_attackEnabled == false) {
+                _attackTargetEntity = null;
+            }
+        }
     }
 
     public WeaponData WeaponData {

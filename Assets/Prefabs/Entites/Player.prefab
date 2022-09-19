@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 5786530826854906641}
   - component: {fileID: 3743066115530700944}
   - component: {fileID: 2680795060059417166}
+  - component: {fileID: 6100511962082541039}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -220,6 +221,7 @@ MonoBehaviour:
   _rb: {fileID: 6112318121227177959}
   _movement: {fileID: 5786530826854906641}
   _zoneObserver: {fileID: 3743066115530700944}
+  _health: {fileID: 6100511962082541039}
   _input: {fileID: 2680795060059417166}
   _weapon: {fileID: 6780032168730502848}
 --- !u!114 &5786530826854906641
@@ -264,6 +266,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 367520231588304746}
+--- !u!114 &6100511962082541039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451532061287990133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ae38a841ed94f40a9c4741be498995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInvincible: 0
+  maxHealth: 3
+  currentHealth: 3
 --- !u!1 &4191020682506463740
 GameObject:
   m_ObjectHideFlags: 0

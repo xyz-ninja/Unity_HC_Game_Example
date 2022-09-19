@@ -4,6 +4,7 @@ using NaughtyAttributes;
 using UnityEngine;
 
 [RequireComponent(typeof(EntityMovement))]
+[RequireComponent(typeof(Health))]
 public class Entity : MonoBehaviour {
 
     [Header("Entity Transforms")] 
@@ -14,7 +15,8 @@ public class Entity : MonoBehaviour {
     [SerializeField] protected Rigidbody _rb;
     [SerializeField] protected EntityMovement _movement;
     [SerializeField] protected EntityZoneObserver _zoneObserver;
-
+    [SerializeField] protected Health _health;
+    
     #region getters
 
     public Transform RootT => _rootT;
@@ -22,6 +24,7 @@ public class Entity : MonoBehaviour {
     public Rigidbody Rb => _rb;
     public EntityMovement Movement => _movement;
     public EntityZoneObserver ZoneObserver => _zoneObserver;
+    public Health Health => _health;
     
     #endregion
     
@@ -31,6 +34,7 @@ public class Entity : MonoBehaviour {
         _movement = GetComponent<EntityMovement>();
         _movement.Entity = this;
         _zoneObserver = GetComponent<EntityZoneObserver>();
+        _health = GetComponent<Health>();
     }
 
     protected virtual void OnDisable() {
