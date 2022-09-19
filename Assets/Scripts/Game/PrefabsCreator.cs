@@ -10,6 +10,8 @@ public class PrefabsCreator : MonoBehaviour
     [field: SerializeField] public GameObject EnemyPrefab { get; private set; }
     [field: SerializeField] public GameObject PickableItemPrefab { get; private set; }
 
+    [field: SerializeField] public GameObject InventoryPresenterBlock { get; private set; }
+
     private void Awake() {
         Instance = this;
     }
@@ -18,15 +20,27 @@ public class PrefabsCreator : MonoBehaviour
         Instance = null;
     }
 
-    public static GameObject CreatePooledPrefab(GameObject prefab, Vector3 position = default, Transform parentT = default) {
+    public static GameObject CreatePooledPrefab(GameObject prefab, Vector3 position = default, Transform parentT = default, bool useLocalPosition = false) {
         var obj = LeanPool.Spawn(prefab, parentT);
-        obj.transform.position = position;
+        
+        if (useLocalPosition) {
+            obj.transform.localPosition = position;
+        } else {
+            obj.transform.position = position;
+        }
+        
         return obj;
     }
     
-    public static GameObject CreatePrefab(GameObject prefab, Vector3 position = default, Transform parentT = default) {
+    public static GameObject CreatePrefab(GameObject prefab, Vector3 position = default, Transform parentT = default, bool useLocalPosition = false) {
         var obj = Instantiate(prefab, parentT);
-        obj.transform.position = position;
+        
+        if (useLocalPosition) {
+            obj.transform.localPosition = position;
+        } else {
+            obj.transform.position = position;
+        }
+
         return obj;
     } 
 }

@@ -34,7 +34,7 @@ public class PickableItem : MonoBehaviour {
 
     public void Pick(Inventory inventory) {
         
-        _moveToTransform.StartMoveToTransform(inventory.gameObject.transform, 5, () => {
+        _moveToTransform.StartMoveToTransform(inventory.gameObject.transform, 2, () => {
             inventory.AddItem(_itemData);
             
             LeanPool.Despawn(gameObject);
@@ -45,5 +45,6 @@ public class PickableItem : MonoBehaviour {
 
     private void OnDisable() {
         _availableToPick = false;
+        _itemData = null;
     }
 }
