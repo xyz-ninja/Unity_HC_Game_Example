@@ -6,8 +6,31 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-	private enum ENEMY_ACTION_MODE { IDLE, MOVE_AROUND, CHASE_PLAYER }
+	public enum ENEMY_ACTION_MODE { IDLE, MOVE_AROUND, CHASE_PLAYER }
 
+	[Header("Components")] 
+	[SerializeField] private EnemyCollisions _collisions;
+	[SerializeField] private EnemyAI _ai;
+	[SerializeField] private Weapon _weapon;
+
+	[Header("Options")]
+	[SerializeField] private ENEMY_ACTION_MODE _actionMode;
+	
+	#region getters
+	public EnemyAI AI => _ai;
+	public Weapon Weapon => _weapon;
+
+	public ENEMY_ACTION_MODE ActionMode {
+		get => _actionMode;
+		set {
+			if (_actionMode != value) {
+				_actionMode = value;
+			}
+		}
+	}
+
+	#endregion
+	
 	private bool _isDead = false;
 	
 	private void OnEnable() {
