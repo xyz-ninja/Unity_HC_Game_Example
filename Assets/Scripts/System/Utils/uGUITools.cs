@@ -6,6 +6,7 @@ namespace UnityEngine.UI.Extensions
 {
     public static class uGUITools
     {
+        #if UNITY_EDITOR
         [MenuItem("uGUI/Anchors to Corners %[")]
         static void AnchorsToCorners()
         {
@@ -131,5 +132,7 @@ namespace UnityEngine.UI.Extensions
                 t.localScale = new Vector3(t.localScale.x, -t.localScale.y, t.localScale.z);
             }
         }
+        
+        #endif
     }
 }

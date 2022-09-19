@@ -23,6 +23,7 @@ namespace NavySpade.Modules.Utils.Serialization.SerializeReferenceExtensions.Edi
     [CustomPropertyDrawer(typeof(SRAttribute), false)]
     public class SRDrawer : PropertyDrawer
     {
+        #if UNITY_EDITOR
         private static string EmptyTypeName => "(empty)";
 
         private SRAttribute _attr;
@@ -279,5 +280,6 @@ namespace NavySpade.Modules.Utils.Serialization.SerializeReferenceExtensions.Edi
             var color = typeName == EmptyTypeName ? Color.red : Color.green;
             GUI.backgroundColor = color;
         }
+        #endif
     }
 }

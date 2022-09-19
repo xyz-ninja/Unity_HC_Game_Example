@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponName: Sword
   _attackMode: 0
-  _attackRange: 1
+  _attackRange: 0.94
   _attackDelay: 1.4
   _accuracySpread: {x: -1.5, y: 1.5}
   <OnAttackFX>k__BackingField: {fileID: 0}

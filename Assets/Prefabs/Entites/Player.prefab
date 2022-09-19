@@ -297,8 +297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInvincible: 0
-  maxHealth: 6
-  currentHealth: 6
+  maxHealth: 10
+  currentHealth: 10
 --- !u!1 &3700603554738771402
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +884,10 @@ PrefabInstance:
       propertyPath: _health
       value: 
       objectReference: {fileID: 6100511962082541039}
+    - target: {fileID: 2685821492576633459, guid: 39ad5c241cb8ce64da30f142b497f7bb, type: 3}
+      propertyPath: _showDuration
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3512513749898642820, guid: 39ad5c241cb8ce64da30f142b497f7bb, type: 3}
       propertyPath: m_Name
       value: HealthProgressbar

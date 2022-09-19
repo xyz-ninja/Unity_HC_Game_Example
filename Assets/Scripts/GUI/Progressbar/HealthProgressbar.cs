@@ -54,6 +54,8 @@ public class HealthProgressbar : Progressbar {
         
         _rootT.gameObject.SetActive(true);
         
+        _showTimer.Reload();
+        
         UpdateView();
     }
 }
