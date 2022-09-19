@@ -18,28 +18,32 @@ public class EnemyCollisions : MonoBehaviour {
     }
 
     private void Update() {
+        
         _updateCollisionTimer.Update(Time.deltaTime);
 
         if (_updateCollisionTimer.IsFinish()) {
-            
-            var hits = Physics.RaycastAll(transform.position, _enemy.RootT.forward , _collsisionCheckRange, _immovableLayers);
 
-            foreach (var hit in hits) {
+            if (_enemy.ActionMode == Enemy.ENEMY_ACTION_MODE.MOVE_AROUND) {
 
-                if (hit.collider.gameObject == this.gameObject) {
-                    continue;
-                }
-                
-                if (_enemy.ActionMode == Enemy.ENEMY_ACTION_MODE.MOVE_AROUND) {
+                var hits = Physics.RaycastAll(transform.position, _enemy.RootT.forward, _collsisionCheckRange,
+                    _immovableLayers);
 
+                foreach (var hit in hits) {
+
+                    if (hit.collider.gameObject == this.gameObject) {
+                        continue;
+                    }
+                    
                     _enemy.ActionMode = Enemy.ENEMY_ACTION_MODE.IDLE;
 
                     var targetDirection = (transform.position - hit.point).normalized;
                     targetDirection.y = 0;
                     _enemy.AI.ChangeMoveAroundDirection(targetDirection);
+
+                    break;
                 }
             }
-            
+
             _updateCollisionTimer.Reload();
         }
     }
