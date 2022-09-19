@@ -28,6 +28,8 @@ public class ProjectileCollisions : MonoBehaviour {
                 
                 entity.Health.DealDamage(_projectile.Damage);
                 
+                entity.Rb.AddForce(_projectile.MoveInDirection.TargetMoveDirection * _projectile.PunchForce, ForceMode.Impulse);
+                
                 Hit();
             }
             

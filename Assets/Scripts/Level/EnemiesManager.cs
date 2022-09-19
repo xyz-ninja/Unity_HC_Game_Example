@@ -47,4 +47,10 @@ public class EnemiesManager : MonoBehaviour {
     public void AnalyseEnemies() {
         _enemies = _enemies.Where(enemy => enemy != null && enemy.gameObject.activeSelf).ToList();
     }
+
+    public void SetEnemiesActionMode(Enemy.ENEMY_ACTION_MODE mode) {
+        foreach (var enemy in _enemies) {
+            enemy.ActionMode = mode;
+        }
+    }
 }

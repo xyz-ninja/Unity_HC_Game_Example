@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour {
 
     private Vector3 _moveAroundDirection;
     private Timer _autoChangeDirectionTimer;
-    
+
     #region getters
 
     public Vector3 MoveAroundDirection => _moveAroundDirection;
@@ -43,6 +43,16 @@ public class EnemyAI : MonoBehaviour {
                 }
                 
                 _enemy.Movement.MoveInDirection(_moveAroundDirection);
+                
+                break;
+            
+            case Enemy.ENEMY_ACTION_MODE.CHASE_PLAYER:
+
+                var player = Game.Instance.World.CurrentLevel.Player;
+
+                var playerDirection = (player.transform.position - transform.position).normalized;
+                
+                _enemy.Movement.MoveInDirection(playerDirection);
                 
                 break;
         }

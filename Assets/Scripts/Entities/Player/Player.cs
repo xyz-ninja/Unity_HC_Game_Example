@@ -97,13 +97,21 @@ public class Player : Entity {
 				
 				_inventory.SellItems();
 
-				Debug.Log("Entered Zone : Player Base");
+				level.EnemiesManager.SetEnemiesActionMode(
+					Enemy.ENEMY_ACTION_MODE.MOVE_AROUND);
 				
+				_health.Reset();
+				
+				Debug.Log("Entered Zone : Player Base");
+
 				break;
 			
 			case World.ZONE_TYPE.DANGER:
 
 				_weapon.AttackEnabled = true;
+				
+				Game.Instance.World.CurrentLevel.EnemiesManager.SetEnemiesActionMode(
+					Enemy.ENEMY_ACTION_MODE.CHASE_PLAYER);
 				
 				Debug.Log("Entered Zone : Danger");
 				

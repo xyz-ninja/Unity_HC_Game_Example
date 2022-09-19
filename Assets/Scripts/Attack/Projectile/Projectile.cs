@@ -15,12 +15,16 @@ public class Projectile : MonoBehaviour {
 
     [Header("Options")] 
     [SerializeField] private int _damage = 1;
+    [SerializeField] private float _punchForce = 400f;
     [SerializeField] private float _autoDestroyTime = 3f;
     [SerializeField] private float _beforeDestroyDelay = 0.1f;
 
     #region getters
 
+    public MoveInDirection MoveInDirection => _moveInDirection;
+
     public int Damage => _damage;
+    public float PunchForce => _punchForce;
 
     #endregion
     
