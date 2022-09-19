@@ -62,5 +62,8 @@ public class Enemy : Entity
 		_isDead = true;
 		
 		LeanPool.Despawn(gameObject);
+		
+		var level = Game.Instance.World.CurrentLevel;
+		level.EnemiesManager.AnalyseEnemies();
 	}
 }

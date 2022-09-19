@@ -78,13 +78,18 @@ public class Player : Entity {
 				break;
 		}
 	}
-
+	
 	private void ZoneChanged() {
 		switch (_zoneObserver.ZoneType) {
 			case World.ZONE_TYPE.PLAYER_BASE:
 
 				_weapon.AttackEnabled = false;
-				
+
+				var level = Game.Instance.World.CurrentLevel;
+				if (level.EnemiesManager.EnemiesCount == 0) {
+					level.GenerateEnemies();
+				}
+
 				Debug.Log("Entered Zone : Player Base");
 				
 				break;

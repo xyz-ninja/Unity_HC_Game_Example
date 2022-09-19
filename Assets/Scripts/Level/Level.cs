@@ -25,6 +25,8 @@ public class Level : MonoBehaviour {
 	public Player Player => _player;
 	public PlaneGrid DangerZonePlaneGrid => _dangerZonePlaneGrid;
 
+	public EnemiesManager EnemiesManager => _enemiesManager;
+
 	#endregion
 
 	private void Start() {
@@ -32,6 +34,10 @@ public class Level : MonoBehaviour {
 		
 		_dangerZonePlaneGrid.GenerateGrid();
 		
+		GenerateEnemies();
+	}
+
+	public void GenerateEnemies() {
 		_enemiesManager.SpawnEnemiesOnGrid(_dangerZonePlaneGrid);
 	}
 }
