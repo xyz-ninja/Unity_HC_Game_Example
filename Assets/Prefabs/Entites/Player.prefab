@@ -374,7 +374,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponData: {fileID: 11400000, guid: 2b27b7d4bac2c9148acbb3382c7154c6, type: 2}
   _shootPointT: {fileID: 8211132912394642489}
-  _projectile: {fileID: 0}
+  _projectile: {fileID: 6770369926634593736, guid: a5f90c35c84ae1242a73fb9f991dda07, type: 3}
+  _attackClosestEnemy: 1
   _autoSearchEnemies: 1
   _enemiesLayer:
     serializedVersion: 2

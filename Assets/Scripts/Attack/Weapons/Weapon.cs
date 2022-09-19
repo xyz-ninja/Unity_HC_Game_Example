@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour {
     
     private Timer _autoAttackTimer = new Timer(1);
 
-    public Action OnAttack;
+    public event Action OnAttack;
     
     private bool _isMeleeMode;
     private bool _isFirearmsMode;
@@ -108,11 +108,19 @@ public class Weapon : MonoBehaviour {
     
     public void Attack(Entity entity) {
 
-        OnAttack.Invoke();
+        OnAttack?.Invoke();
 
         switch (_weaponData.AttackMode) {
             case WeaponData.ATTACK_MODE.FIREARMS:
-                //var projectile = PrefabsCreator.Instance.
+
+                var shootPoint = _shootPointT.position;
+                
+                var projectileObject = PrefabsCreator.CreatePooledPrefab(_projectile, shootPoint);
+                var projectile = projectileObject.GetComponent<Projectile>();
+
+                var direction = (entity.transform.position - shootPoint).normalized;
+                projectile.Init(direction, entity.gameObject.tag);
+                
                 break;
         }
     }
