@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8311815752430057896}
   - component: {fileID: 3289136168740368229}
   - component: {fileID: 8630924046238977374}
+  - component: {fileID: 1222279070964076919}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -68,6 +69,7 @@ MonoBehaviour:
   _visualT: {fileID: 1822016826837109181}
   _rb: {fileID: 8311815752430057896}
   _movement: {fileID: 8630924046238977374}
+  _zoneObserver: {fileID: 1222279070964076919}
 --- !u!114 &8630924046238977374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +85,20 @@ MonoBehaviour:
   <Entity>k__BackingField: {fileID: 3289136168740368229}
   _moveType: 0
   _moveSpeed: 100
+  _rotateToMoveDirection: 1
+--- !u!114 &1222279070964076919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400618031857169722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0362fc9568054344a8c356907e96d3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zoneType: 1
 --- !u!1 &3982773997699558917
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,6 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectile: {fileID: 5915070924319397645}
+  _solidLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &5915070924319397651
 MonoBehaviour:
   m_ObjectHideFlags: 0

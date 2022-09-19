@@ -1,7 +1,9 @@
 using UnityEngine;
 
 public class World : MonoBehaviour {
-    
+
+    public enum ZONE_TYPE { PLAYER_BASE, DANGER }
+
     [Header("Components")] 
     [SerializeField] private Level _currentLevel; // TODO: убрать сериализацию
 

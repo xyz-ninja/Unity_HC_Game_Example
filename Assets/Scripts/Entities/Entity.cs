@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour {
     [Header("Entity Components")]
     [SerializeField] protected Rigidbody _rb;
     [SerializeField] protected EntityMovement _movement;
+    [SerializeField] protected EntityZoneObserver _zoneObserver;
 
     #region getters
 
@@ -20,7 +21,8 @@ public class Entity : MonoBehaviour {
 
     public Rigidbody Rb => _rb;
     public EntityMovement Movement => _movement;
-
+    public EntityZoneObserver ZoneObserver => _zoneObserver;
+    
     #endregion
     
     [Button()]
@@ -28,9 +30,10 @@ public class Entity : MonoBehaviour {
         _rb = GetComponent<Rigidbody>();
         _movement = GetComponent<EntityMovement>();
         _movement.Entity = this;
+        _zoneObserver = GetComponent<EntityZoneObserver>();
     }
 
-    private void OnDestroy() {
+    private void OnDisable() {
         _rootT.DOKill();
         transform.DOKill();
     }

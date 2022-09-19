@@ -118,7 +118,14 @@ public class Weapon : MonoBehaviour {
                 var projectileObject = PrefabsCreator.CreatePooledPrefab(_projectile, shootPoint);
                 var projectile = projectileObject.GetComponent<Projectile>();
 
-                var direction = (entity.transform.position - shootPoint).normalized;
+                var accuracySpread = _weaponData.AccuracySpread;
+
+                var targetPoint = entity.transform.position;
+                targetPoint.x += Random.Range(accuracySpread.x, accuracySpread.y);
+                targetPoint.z += Random.Range(accuracySpread.x, accuracySpread.y);
+                
+                var direction = (targetPoint - shootPoint).normalized;
+                
                 projectile.Init(direction, entity.gameObject.tag);
                 
                 break;

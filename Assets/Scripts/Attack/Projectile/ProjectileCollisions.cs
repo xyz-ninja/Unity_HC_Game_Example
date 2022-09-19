@@ -6,7 +6,8 @@ using UnityEngine;
 public class ProjectileCollisions : MonoBehaviour {
     
     [SerializeField] private Projectile _projectile;
-
+    [SerializeField] private LayerMask _solidLayers;
+    
     private Stack<string> _targetTags = new Stack<string>();
 
     private bool _isCollided = false;
@@ -14,13 +15,13 @@ public class ProjectileCollisions : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
 
         if (_isCollided) {
-            Debug.Log("Already collided");
             return;
         }
         
         var otherRigidbody = other.attachedRigidbody;
 
         if (otherRigidbody != null) {
+            
             var entity = otherRigidbody.gameObject.GetComponent<Entity>();
             
             if (entity != null && _targetTags.Contains(entity.gameObject.tag)) {
@@ -29,16 +30,14 @@ public class ProjectileCollisions : MonoBehaviour {
             
         } else {
             
-            if (other.gameObject.layer == LayerMask.GetMask("Solid")) {
+            if ((_solidLayers.value & (1 << other.transform.gameObject.layer)) > 0) {
                 Hit();
             }
         }
     }
 
     private void Hit() {
-        
-        Debug.Log("Hit!");
-        
+
         _projectile.DestroyProjectile();
         
         _isCollided = true;

@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 6112318121227177959}
   - component: {fileID: 367520231588304746}
   - component: {fileID: 5786530826854906641}
+  - component: {fileID: 3743066115530700944}
   - component: {fileID: 2680795060059417166}
   m_Layer: 3
   m_Name: Player
@@ -218,8 +219,9 @@ MonoBehaviour:
   _visualT: {fileID: 4522680790421749746}
   _rb: {fileID: 6112318121227177959}
   _movement: {fileID: 5786530826854906641}
+  _zoneObserver: {fileID: 3743066115530700944}
   _input: {fileID: 2680795060059417166}
-  _weapon: {fileID: 0}
+  _weapon: {fileID: 6780032168730502848}
 --- !u!114 &5786530826854906641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +238,19 @@ MonoBehaviour:
   _moveType: 0
   _moveSpeed: 150
   _rotateToMoveDirection: 1
+--- !u!114 &3743066115530700944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451532061287990133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0362fc9568054344a8c356907e96d3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zoneType: 0
 --- !u!114 &2680795060059417166
 MonoBehaviour:
   m_ObjectHideFlags: 0
