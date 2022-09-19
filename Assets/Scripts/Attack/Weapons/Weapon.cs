@@ -152,6 +152,12 @@ public class Weapon : MonoBehaviour {
                 projectile.Init(direction, entity.gameObject.tag);
                 
                 break;
+            
+            case WeaponData.ATTACK_MODE.MELEE:
+
+                _attackTargetEntity.Health.DealDamage(1);
+
+                break;
         }
     }
     

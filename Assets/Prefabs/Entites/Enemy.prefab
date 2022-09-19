@@ -138,7 +138,7 @@ MonoBehaviour:
   _health: {fileID: 7373028271770092774}
   _collisions: {fileID: 7562713131135376071}
   _ai: {fileID: 738227876250492257}
-  _weapon: {fileID: 0}
+  _weapon: {fileID: 2287892124956752231}
   _lootSpawner: {fileID: 6217574860799043356}
   _actionMode: 0
 --- !u!114 &8630924046238977374

@@ -26,6 +26,20 @@ public class Enemy : Entity
 		set {
 			if (_actionMode != value) {
 				_actionMode = value;
+
+				switch (_actionMode) {
+					case ENEMY_ACTION_MODE.MOVE_AROUND:
+
+						_weapon.AttackEnabled = false;
+						
+						break;
+					
+					case ENEMY_ACTION_MODE.CHASE_PLAYER:
+
+						_weapon.AttackEnabled = true;
+						
+						break;
+				}
 			}
 		}
 	}

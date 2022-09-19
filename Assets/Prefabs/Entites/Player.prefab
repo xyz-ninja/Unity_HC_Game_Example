@@ -297,8 +297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInvincible: 0
-  maxHealth: 3
-  currentHealth: 3
+  maxHealth: 6
+  currentHealth: 6
 --- !u!1 &3700603554738771402
 GameObject:
   m_ObjectHideFlags: 0
