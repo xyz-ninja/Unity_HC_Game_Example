@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Lean.Pool;
 using UnityEngine;
 
 public class PickableItem : MonoBehaviour {
@@ -32,5 +34,16 @@ public class PickableItem : MonoBehaviour {
 
     public void Pick(Inventory inventory) {
         
+        _moveToTransform.StartMoveToTransform(inventory.gameObject.transform, 5, () => {
+            inventory.AddItem(_itemData);
+            
+            LeanPool.Despawn(gameObject);
+        });
+
+        _availableToPick = false;
+    }
+
+    private void OnDisable() {
+        _availableToPick = false;
     }
 }

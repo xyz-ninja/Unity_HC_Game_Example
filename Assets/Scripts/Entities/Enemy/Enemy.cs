@@ -12,7 +12,8 @@ public class Enemy : Entity
 	[SerializeField] private EnemyCollisions _collisions;
 	[SerializeField] private EnemyAI _ai;
 	[SerializeField] private Weapon _weapon;
-
+	[SerializeField] private LootSpawner _lootSpawner;
+	
 	[Header("Options")]
 	[SerializeField] private ENEMY_ACTION_MODE _actionMode;
 	
@@ -60,6 +61,8 @@ public class Enemy : Entity
 	private void Die() {
 
 		_isDead = true;
+		
+		_lootSpawner.SpawnLoot();
 		
 		LeanPool.Despawn(gameObject);
 		

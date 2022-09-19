@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     
     private List<ItemsStack> _itemsStacks = new List<ItemsStack>();
 
-    public void AddItem() {
+    public void AddItem(InventoryItemData itemData) {
         
     }
 }

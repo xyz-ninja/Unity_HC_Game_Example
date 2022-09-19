@@ -7,6 +7,9 @@ public class Player : Entity {
 
 	[Header("Componets")] 
 	[SerializeField] private PlayerInput _input;
+	[SerializeField] private PlayerCollisions _collisions;
+	[SerializeField] private Inventory _inventory;
+
 	[SerializeField] private Weapon _weapon;
 
 	private PLAYER_ACTION_MODE _actionMode = PLAYER_ACTION_MODE.IDLE;
@@ -22,6 +25,8 @@ public class Player : Entity {
 		}
 	}
 
+	public Inventory Inventory => _inventory;
+	
 	#endregion
 	
 	private void Awake() {
