@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GlobalData : MonoBehaviour {
     
-    private int _coins = 0;
+    [SerializeField] private int _coins = 0;
 
     #region getters
 

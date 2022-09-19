@@ -13,6 +13,7 @@ public class GUI : MonoBehaviour {
     #region getters
 
     public Canvas Canvas => _canvas;
+    public PanelsManager PanelsManager => _panelsManager;
     public VariableJoystick Joystick => _joystick;
 
     #endregion

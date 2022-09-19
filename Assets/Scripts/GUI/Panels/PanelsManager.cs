@@ -10,7 +10,16 @@ namespace HCExample.GUI {
         [Header("Transforms")] 
         [SerializeField] private Transform _panelsT;
 
+        [Header("Panels")]
+        [SerializeField] private GameOverPanel _gameOverPanel;
+        
         private List<Panel> _panels = new List<Panel>();
+
+        #region getters
+
+        public GameOverPanel GameOverPanel => _gameOverPanel;
+
+        #endregion
 
         private void Awake() {
             foreach (Transform panelT in _panelsT) {
@@ -22,6 +31,17 @@ namespace HCExample.GUI {
                 }
                 
                 _panels.Add(panel);
+            }
+        }
+
+        public void CloseAllPanels(Panel exceptPanel) {
+            
+            foreach (var panel in _panels) {
+                if (panel == exceptPanel) {
+                    continue;
+                }
+                
+                panel.Close();
             }
         }
     }

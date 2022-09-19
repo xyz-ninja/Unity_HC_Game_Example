@@ -1504,6 +1504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b537d1fe5be2ba044b6ccce45449981b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coins: 0
 --- !u!1 &1565302971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,6 +2160,14 @@ PrefabInstance:
     - target: {fileID: 5799632847658107927, guid: 26afd6a1a920edd429c4997c6a6eb547, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311816979156550653, guid: 26afd6a1a920edd429c4997c6a6eb547, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16.175049
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311816979156550653, guid: 26afd6a1a920edd429c4997c6a6eb547, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -629.1199
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26afd6a1a920edd429c4997c6a6eb547, type: 3}

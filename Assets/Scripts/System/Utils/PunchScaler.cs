@@ -25,7 +25,7 @@ public class PunchScaler : MonoBehaviour {
 
 			_scaleTween = _target.transform.DOPunchScale(_strength, _animationDuration, 0).OnComplete(() => {
 				_scaleTween.Kill();
-			});
+			}).SetUpdate(true);
 		}
 	}
 }

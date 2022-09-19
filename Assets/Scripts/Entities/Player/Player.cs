@@ -31,10 +31,12 @@ public class Player : Entity {
 	
 	private void Awake() {
 		_zoneObserver.ZoneChanged += ZoneChanged;
+		_health.HPChanged += CheckHealth;
 	}
 
 	protected override void OnDisable() {
 		_zoneObserver.ZoneChanged -= ZoneChanged;
+		_health.HPChanged -= CheckHealth;
 		
 		base.OnDisable();
 	}
@@ -116,6 +118,12 @@ public class Player : Entity {
 				Debug.Log("Entered Zone : Danger");
 				
 				break;
+		}
+	}
+
+	private void CheckHealth() {
+		if (_health.GetIsDead()) {
+			Game.Instance.World.CurrentLevel.Lose();
 		}
 	}
 }

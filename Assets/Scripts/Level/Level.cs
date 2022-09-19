@@ -16,6 +16,9 @@ public class Level : MonoBehaviour {
 	
 	[Header("Generators")] 
 	[SerializeField] private PlaneGrid _dangerZonePlaneGrid;
+
+	private bool _isWin = false;
+	private bool _isLose = false;
 	
 	#region getters
 
@@ -33,11 +36,28 @@ public class Level : MonoBehaviour {
 		_mainCamera.SetFollowTarget(_player.transform);
 		
 		_dangerZonePlaneGrid.GenerateGrid();
+
+		Time.timeScale = 1f;
 		
 		GenerateEnemies();
 	}
 
 	public void GenerateEnemies() {
 		_enemiesManager.SpawnEnemiesOnGrid(_dangerZonePlaneGrid);
+	}
+
+	public void Win() {
+		
+	}
+
+	public void Lose() {
+		if (_isLose) {
+			return;
+		}
+
+		Time.timeScale = 0.2f;
+		GUI.Instance.PanelsManager.GameOverPanel.Open();
+		
+		_isLose = true;
 	}
 }
