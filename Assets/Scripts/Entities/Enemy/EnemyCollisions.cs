@@ -34,7 +34,7 @@ public class EnemyCollisions : MonoBehaviour {
 
                     _enemy.ActionMode = Enemy.ENEMY_ACTION_MODE.IDLE;
 
-                    var targetDirection = (transform.position - hit.collider.gameObject.transform.position).normalized;
+                    var targetDirection = (transform.position - hit.point).normalized;
                     targetDirection.y = 0;
                     _enemy.AI.ChangeMoveAroundDirection(targetDirection);
                 }
