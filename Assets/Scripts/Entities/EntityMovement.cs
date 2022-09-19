@@ -24,6 +24,8 @@ public class EntityMovement : MonoBehaviour
         set => _rotateToMoveDirection = value;
     }
 
+    public bool IsMove => _isMove;
+
     #endregion
     
     private void Update() {

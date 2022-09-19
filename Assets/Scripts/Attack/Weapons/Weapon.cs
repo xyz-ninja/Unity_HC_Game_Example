@@ -28,6 +28,9 @@ public class Weapon : MonoBehaviour {
     private bool _isMeleeMode;
     private bool _isFirearmsMode;
 
+    private List<Entity> _foundedEnemies = new List<Entity>();
+    private Entity _attackTargetEntity;
+    
     #region getters/setters
 
     public bool AttackEnabled {
@@ -43,6 +46,10 @@ public class Weapon : MonoBehaviour {
             _autoAttackTimer.ChangeInitTime(_weaponData.AttackDelay);
         }
     }
+
+    public int FoundedEnemiesCount => _foundedEnemies.Count;
+
+    public Entity AttackTargetEntity => _attackTargetEntity;
 
     #endregion
     
@@ -72,7 +79,6 @@ public class Weapon : MonoBehaviour {
     }
     
     // метод некорректно имеет метку Perfomance Critical Context в райдере потому что он вызывается из Update внутри таймера
-    private List<Entity> _foundedEnemies = new List<Entity>();
     private void SearchEnemies(bool attackClosest = true) {
         
         _foundedEnemies.Clear(); // это гораздо оптимизированнее, чем создавать новый список внутри метода
@@ -101,13 +107,19 @@ public class Weapon : MonoBehaviour {
                     x => Vector3.Distance(this.transform.position, x.transform.position)
                 ).ToList();
 
-                Attack(_foundedEnemies[0]);
-
-            } else {
+                _attackTargetEntity = _foundedEnemies[0];
                 
-                // атакует случайного противника
-                Attack(_foundedEnemies[Random.Range(0, _foundedEnemies.Count)]);
+            } else {
+
+                // атакуем случайного противника
+                _attackTargetEntity = _foundedEnemies[Random.Range(0, _foundedEnemies.Count)];
             }
+            
+            Attack(_attackTargetEntity);
+            
+        } else {
+            
+            _attackTargetEntity = null;
         }
     }
     
