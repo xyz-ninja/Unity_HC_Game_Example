@@ -783,6 +783,63 @@ Light:
   m_CorrespondingSourceObject: {fileID: 697273081062427993, guid: d63d9554a99f67840be9cd10080206e6, type: 3}
   m_PrefabInstance: {fileID: 697273081766756291}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &790547221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790547222}
+  - component: {fileID: 790547223}
+  m_Layer: 0
+  m_Name: PickableItem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &790547222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790547221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1130783358}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &790547223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790547221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea08375da243a441b88d1e6b0713006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2965488839153093800, guid: 24c35710fd4d6eb40b7d60be276d90ed, type: 3}
+  notification: 3
+  strategy: 0
+  preload: 60
+  capacity: 120
+  recycle: 1
+  persist: 0
+  stamp: 0
+  warnings: 1
+  spawnedClonesList: []
+  despawnedClones: []
+  delays: []
+  deactivatedChild: {fileID: 0}
 --- !u!1 &828103375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,6 +1529,7 @@ Transform:
   m_Children:
   - {fileID: 1565302972}
   - {fileID: 356828301}
+  - {fileID: 790547222}
   m_Father: {fileID: 830141943}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1821,6 +1879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <EnemyPrefab>k__BackingField: {fileID: 400618031857169722, guid: 71bda51fcfc38b448892eaf327b894f2, type: 3}
+  <PickableItemPrefab>k__BackingField: {fileID: 2965488839153093800, guid: 24c35710fd4d6eb40b7d60be276d90ed, type: 3}
 --- !u!1 &1684229719
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,19 @@
+{
+    "name": "NavySpade.Serialization.Interfaces.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:31976cc9e85bdd9459e856fcb40d0d50",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

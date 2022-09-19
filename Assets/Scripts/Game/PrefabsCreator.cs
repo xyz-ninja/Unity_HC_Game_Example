@@ -8,6 +8,7 @@ public class PrefabsCreator : MonoBehaviour
     public static PrefabsCreator Instance;
 
     [field: SerializeField] public GameObject EnemyPrefab { get; private set; }
+    [field: SerializeField] public GameObject PickableItemPrefab { get; private set; }
 
     private void Awake() {
         Instance = this;

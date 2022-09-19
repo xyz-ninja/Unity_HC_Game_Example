@@ -1,0 +1,17 @@
+{
+    "name": "NavySpade.Serializers",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b7fea2f83e96e4e45850e556fc1ff264",
+        "GUID:49b49c76ee64f6b41bf28ef951cb0e50"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
