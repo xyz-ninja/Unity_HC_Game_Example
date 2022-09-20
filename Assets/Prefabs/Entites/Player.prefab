@@ -296,9 +296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ae38a841ed94f40a9c4741be498995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInvincible: 0
-  maxHealth: 10
-  currentHealth: 10
+  _isInvincible: 0
+  _maxHealth: 10
+  _currentHealth: 10
 --- !u!1 &3700603554738771402
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
     
-    [SerializeField] private bool isInvincible = false; 
+    [SerializeField] private bool _isInvincible = false; 
     
-    [SerializeField] private int maxHealth = 3;
-	[SerializeField] private int currentHealth = 3;
+    [SerializeField] private int _maxHealth = 3;
+	[SerializeField] private int _currentHealth = 3;
 
-	bool isDead = false;
+	bool _isDead = false;
 
 	public event Action HPChanged;
 
@@ -19,35 +19,35 @@ public class Health : MonoBehaviour {
 		CheckStatus();
 	}
 
-	public void SetMaxHealth(int _value) {
-		maxHealth = _value;
+	public void SetMaxHealth(int value) {
+		_maxHealth = value;
 	}
 
-	public void SetCurrentHealth(int _value) {
+	public void SetCurrentHealth(int value) {
         
-        if (isInvincible) {
+        if (_isInvincible) {
             
             Debug.Log("Hes goddamn invincible baby!");
             
-            currentHealth = maxHealth;
+            _currentHealth = _maxHealth;
             return;
         }
         
-		currentHealth = _value;
+		_currentHealth = value;
 	}
 
 	public void Reset() {
-		currentHealth = maxHealth;
+		_currentHealth = _maxHealth;
         
         HPChanged?.Invoke();
 	}
 
-	public void Restore(int _count) {
+	public void Restore(int count) {
         
-		currentHealth += _count;
+		_currentHealth += count;
 
-		if (currentHealth > maxHealth) {
-			currentHealth = maxHealth;
+		if (_currentHealth > _maxHealth) {
+			_currentHealth = _maxHealth;
 		}
         
         HPChanged?.Invoke();
@@ -55,9 +55,9 @@ public class Health : MonoBehaviour {
 		CheckStatus();
 	}
 
-	public void DealDamage(int _count) {
+	public void DealDamage(int count) {
         
-        if (isInvincible) {
+        if (_isInvincible) {
             
             Debug.Log("Hes goddamn invincible baby!");
             
@@ -66,10 +66,10 @@ public class Health : MonoBehaviour {
             return;
         }
         
-		currentHealth -= _count;
+		_currentHealth -= count;
 	
-		if (currentHealth < 0) {
-			currentHealth = 0;
+		if (_currentHealth < 0) {
+			_currentHealth = 0;
 		}
         
         HPChanged?.Invoke();
@@ -78,28 +78,28 @@ public class Health : MonoBehaviour {
 	}
 
 	void CheckStatus() {
-		if (currentHealth <= 0) {
-			isDead = true;
+		if (_currentHealth <= 0) {
+			_isDead = true;
 		} else {
-			isDead = false;
+			_isDead = false;
 		}
     }
 
 	#region getters/setters
 
 	public int GetMaxValue() {
-		return maxHealth;
+		return _maxHealth;
 	}
 
 	public int GetCurrentValue() {
-		return currentHealth;
+		return _currentHealth;
 	}
 
 	public bool GetIsDead() {
 
 		CheckStatus();
 
-		return isDead;
+		return _isDead;
 	}
 
 	#endregion
