@@ -22,19 +22,9 @@ namespace HCExample.GUI {
 
       public override void Open() {
          
-         base.Open();
-
          _panelsManager.CloseAllPanels(this);
-
-         StartCoroutine(CoroOpen());
-      }
-      
-      IEnumerator CoroOpen() {
-         foreach (var punchScaler in _punchScalers) {
-            punchScaler.Scale();
-            
-            yield return new WaitForSeconds(0.06f);
-         }
+         
+         base.Open();
       }
    }
 }
